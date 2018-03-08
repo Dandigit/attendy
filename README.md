@@ -1,2 +1,2 @@
-# attendy
-A Raspberry Pi based RFID attendance recording system
+# Attendy
+A Raspberry Pi based RFID attendance recording system.
