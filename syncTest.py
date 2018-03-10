@@ -18,7 +18,7 @@ try:
         c = "This would be the card ID, but this is just a test."
         d = "This would be the student's name, but this is just a test."
         values = {'values':[[currentTime, currentDate, c, d],]}
-        rangeName = 'A'+ str(i) + ':D'
+        rangeName = 'A'+':D'
         sheetupdate.update_authenticate(spreadsheetId, rangeName, values)
 finally:
         print("Right now the GPIO would be cleaned, but that's not an issue at the moment as this is just a test.")
