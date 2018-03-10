@@ -6,10 +6,10 @@ from time import sleep
 
 # Enter your Firebase credentials in here
 config = {
-  "apiKey": "Enter Firebase apiKey here",
-  "authDomain": "projectId.firebaseapp.com",
-  "databaseURL": "https://databaseName.firebaseio.com",
-  "storageBucket": "projectId.appspot.com"
+  "apiKey": "AIzaSyAXRs79-GGaalWFFT27uvBeX73rPGw2Dv8",
+  "authDomain": "attendy-backend.firebaseapp.com",
+  "databaseURL": "https://attendy-backend.firebaseio.com",
+  "storageBucket": "attendy-backend.appspot.com"
 }
 
 firebase = pyrebase.initialize_app(config)
