@@ -12,14 +12,16 @@ def testsheet():
   
     sheetupdate.update_authenticate(spreadsheetId, rangeName, values)
   
-try:     
-    currentTime = '{:%H:%M:%S}'.format(datetime.datetime.now())
-    currentDate = '{:%dT:%m:%Y}'.format(datetime.datetime.now())
-    c = "This would be the card ID, but this is just a test."
-    d = "This would be the student's name, but this is just a test."
-    values = {'values':[[currentTime, currentDate, c, d],]}
-    rangeName = 'A'+':D'
-    sheetupdate.update_authenticate(spreadsheetId, rangeName, values)
+try:
+    while True:
+        for i in range(2):
+            currentTime = '{:%H:%M:%S}'.format(datetime.datetime.now())
+            currentDate = '{:%dT:%m:%Y}'.format(datetime.datetime.now())
+            c = "This would be the card ID, but this is just a test."
+            d = "This would be the student's name, but this is just a test."
+            values = {'values':[[currentTime, currentDate, c, d],]}
+            rangeName = 'A'+':D'
+            sheetupdate.update_authenticate(spreadsheetId, rangeName, values)
 finally:
     print("Right now the GPIO would be cleaned, but that's not an issue at the moment as this is just a test.")
   
