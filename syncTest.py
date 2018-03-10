@@ -22,8 +22,7 @@ try:
             values = {'values':[[currentTime, currentDate, c, d],]}
             rangeName = 'A'+ str(i) +':D'
             sheetupdate.update_authenticate(spreadsheetId, rangeName, values)
-finally:
-    print("Right now the GPIO would be cleaned, but that's not an issue at the moment as this is just a test.")
-  
+            print("Right now the GPIO would be cleaned, but that's not an issue at the moment as this is just a test.")
+
 if __name__ == '__main__':
     testsheet()
