@@ -13,7 +13,6 @@ def testsheet():
         sheetupdate.update_authenticate(spreadsheetId, rangeName, values)
   
 try:
-        id, text = reader.read()
         currentTime = '{:%H:%M:%S}'.format(datetime.datetime.now())
         currentDate = '{:%dT:%m:%Y}'.format(datetime.datetime.now())
         c = "This would be the card ID, but this is just a test."
