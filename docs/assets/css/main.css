@@ -1,6 +1,5 @@
 * {
   text-align: center;
-  color: white;
 }
 
 body {
@@ -8,21 +7,25 @@ body {
 }
 
 .capsule {
-  padding: 15%;
+  padding: 15px;
   border 3px solid white;
 }
 
 .main {
-  font-family: 'Pauta One';
+  font-family: 'Patua One', cursive;
+  color: white;
 }
 
 .sub {
   font-family: 'Roboto', sans-serif;
+  color: white;
 }
 
-.links {
+.links button {
   font-family: 'Roboto', sans-serif;
-  padding: 1px;
+  padding: 3px;
   border-radius: 5px;
   border: 1px solid white;
+  background-color: white;
+  color: white;
 }
