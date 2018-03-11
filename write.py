@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import RPi.GPIO as GPIO
+import os
 import sys
 sys.path.append('libraries/SimpleMFRC522.py')
 import SimpleMFRC522
@@ -12,6 +13,6 @@ try:
     print("Please place your tag on the reader")
     reader.write(text)
     print("Write successful!")
-    os.system('success.mp3')
+    os.system('mpg123 -q success.mp3 &')
 finally:
     GPIO.cleanup()
