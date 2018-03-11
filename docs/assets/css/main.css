@@ -1,1 +1,28 @@
+* {
+  text-align: center;
+  color: white;
+}
 
+body {
+  background-color: black;
+}
+
+.capsule {
+  padding: 15%;
+  border 3px solid white;
+}
+
+.main {
+  font-family: 'Pauta One', cursive;
+}
+
+.sub {
+  font-family: 'Roboto', sans-serif;
+}
+
+.links {
+  font-family: 'Roboto', sans-serif;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid white;
+}
