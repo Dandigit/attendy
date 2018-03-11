@@ -1,33 +1,41 @@
 #!/usr/bin/env python
 
 import RPi.GPIO as GPIO
+import sys
+sys.path.append('libraries/SimpleMFRC522.py')
 import SimpleMFRC522
-import sheetupdate
 import datetime
-from random import randint
-from time import sleep
+import logging
+from sheetsync import Sheet, ia_credentials_helper
 
-reader = SimpleMFRC522.SimpleMFRC522()
+# Defining the RC522 reader
+reader = SimpleMFRC522.SimpleMFRC522() 
 
-def testsheet():
-        spreadsheetId = '1HxIF-7LGQI-OtNyNIYU9ao0CKPfzFW6eGyurC6qvmBI'
-        rangeName = 'A1:D'
-        values = {'values':[['Time','Date','Name','ID'],]}
-  
-        sheetupdate.update_authenticate(spreadsheetId, rangeName, values)
-  
+# Right now we're logging - so much could go wrong.
+logging.getLogger('sheetsync').setLevel(logging.DEBUG)
+logging.basicConfig()
+
+# Enter your OAUTH2 credentials here:
+CLIENT_ID = 'Enter client ID here'
+CLIENT_SECRET = 'Enter client secret here'
+creds = ia_credentials_helper(CLIENT_ID, CLIENT_SECRET,
+                              credentials_cache_file='cred_cache.json')
+readerOn = true
+
 try:
-        id, text = reader.read()
+    while readerOn == true:
+        id, text = reder.read()
         currentTime = '{:%H:%M:%S}'.format(datetime.datetime.now())
         currentDate = '{:%dT:%m:%Y}'.format(datetime.datetime.now())
-        c = id
-        d = text
-        values = {'values':[[currentTime, currentDate, c, d],]}
-        rangeName = 'A'+ str(i) + ':D'
-        sheetupdate.update_authenticate(spreadsheetId, rangeName, values)
+        cardId = id
+        name = text
+        
+        data = { name: {"Time" : currentTime, "Date" : currentDate}}
+
+        # Find or create a spreadsheet, then inject data.
+        target = Sheet(credentials=creds, document_name="Attendy")
+        target.inject(data)
+        print "Spreadsheet creatd here: %s" % target.document_href
 finally:
-        GPIO.cleanup()
-  
-if __name__ == '__main__':
-        testsheet()
+    GPIO.cleanup()
   
