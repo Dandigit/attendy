@@ -12,5 +12,6 @@ try:
     print("Please place your tag on the reader")
     reader.write(text)
     print("Write successful!")
+    os.system('success.mp3')
 finally:
     GPIO.cleanup()
