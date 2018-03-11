@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import RPi.GPIO as GPIO
+import os
 import sys
 sys.path.append('libraries/SimpleMFRC522.py')
 import SimpleMFRC522
@@ -36,7 +37,7 @@ try:
         target = Sheet(credentials=creds, document_name="Attendy")
         target.inject(data)
         print "Written to spreadsheet: %s" % target.document_href
-        os.system('success.mp3')
+        os.system('mpg123 -q success.mp3 &')
 finally:
     GPIO.cleanup()
   
