@@ -17,3 +17,4 @@ data = { "Kermit": {"Color" : "Green", "Performer" : "Jim Henson"},
 target = Sheet(credentials=creds, document_name="Sync Test")
 target.inject(data)
 print "Spreadsheet created here: %s" % target.document_href
+os.system('mpg123 -q success.mp3')
