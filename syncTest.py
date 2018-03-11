@@ -1,20 +1,19 @@
-#!/usr/bin/env python
+import logging
+from sheetsync import Sheet, ia_credentials_helper
+# Turn on logging so you can see what sheetsync is doing.
+logging.getLogger('sheetsync').setLevel(logging.DEBUG)
+logging.basicConfig()
 
-import pyrebase
-import datetime
-from time import sleep
+# Create OAuth2 credentials, or reload them from a local cache file.
+CLIENT_ID = '946386881583-q0jl6r8280p56o0ma4qph2157tmp1hs2.apps.googleusercontent.com'
+CLIENT_SECRET = 'rhniAHN0Rz_cs_AGB81TrkWX'
+creds = ia_credentials_helper(CLIENT_ID, CLIENT_SECRET,
+                              credentials_cache_file='cred_cache.json')
 
-# Enter your Firebase credentials in here
-config = {
-  "apiKey": "AIzaSyAXRs79-GGaalWFFT27uvBeX73rPGw2Dv8",
-  "authDomain": "attendy-backend.firebaseapp.com",
-  "databaseURL": "https://attendy-backend.firebaseio.com",
-  "storageBucket": "attendy-backend.appspot.com"
-}
+data = { "Kermit": {"Color" : "Green", "Performer" : "Jim Henson"},
+         "Miss Piggy" : {"Color" : "Pink", "Performer" : "Frank Oz"} }
 
-firebase = pyrebase.initialize_app(config)
-
-db = firebase.database()
-db.child("users").child("Morty")
-data = {"name": "Mortimer 'Morty' Smith"}
-db.child("users").push(data)
+# Find or create a spreadsheet, then inject data.
+target = Sheet(credentials=creds, document_name="Sync Test")
+target.inject(data)
+print "Spreadsheet created here: %s" % target.document_href
