@@ -5,8 +5,8 @@ logging.getLogger('sheetsync').setLevel(logging.DEBUG)
 logging.basicConfig()
 
 # Create OAuth2 credentials, or reload them from a local cache file.
-CLIENT_ID = '946386881583-q0jl6r8280p56o0ma4qph2157tmp1hs2.apps.googleusercontent.com'
-CLIENT_SECRET = 'rhniAHN0Rz_cs_AGB81TrkWX'
+CLIENT_ID = 'Enter client ID here'
+CLIENT_SECRET = 'Enter client secret here'
 creds = ia_credentials_helper(CLIENT_ID, CLIENT_SECRET,
                               credentials_cache_file='cred_cache.json')
 
