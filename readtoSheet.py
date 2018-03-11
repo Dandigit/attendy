@@ -35,7 +35,8 @@ try:
         # Find or create a spreadsheet, then inject data.
         target = Sheet(credentials=creds, document_name="Attendy")
         target.inject(data)
-        print "Spreadsheet creatd here: %s" % target.document_href
+        print "Written to spreadsheet: %s" % target.document_href
+        os.system('success.mp3')
 finally:
     GPIO.cleanup()
   
