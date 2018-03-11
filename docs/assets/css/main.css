@@ -13,7 +13,7 @@ body {
 }
 
 .main {
-  font-family: 'Pauta One', cursive;
+  font-family: 'Pauta One';
 }
 
 .sub {
@@ -22,7 +22,7 @@ body {
 
 .links {
   font-family: 'Roboto', sans-serif;
-  padding: 5px;
+  padding: 1px;
   border-radius: 5px;
   border: 1px solid white;
 }
