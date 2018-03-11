@@ -10,6 +10,12 @@ body {
   padding: 15px;
   border 3px solid white;
   margin-top: 50%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
 }
 
 .main {
