@@ -10,3 +10,5 @@ Right now Attendy runs on the Raspberry Pi B+, 2 or 3 connected to the RC522 boa
 
 ### Can I contribute?
 Sure! Shoot me an email and we'll work things out.
+
+## Credits
