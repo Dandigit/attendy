@@ -25,7 +25,8 @@ readerOn = true
 
 try:
     while readerOn == true:
-        id, text = reder.read()
+        id, text = reader.read()
+        os.system('mpg123 -q success.mp3 &')
         currentTime = '{:%H:%M:%S}'.format(datetime.datetime.now())
         currentDate = '{:%d:%m:%Y}'.format(datetime.datetime.now())
         cardId = id
@@ -37,7 +38,7 @@ try:
         target = Sheet(credentials=creds, document_name="Attendy")
         target.inject(data)
         print "Written to spreadsheet: %s" % target.document_href
-        os.system('mpg123 -q success.mp3 &')
+        print "Ready"
 finally:
     GPIO.cleanup()
   
