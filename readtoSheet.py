@@ -27,7 +27,7 @@ try:
     while readerOn == true:
         id, text = reder.read()
         currentTime = '{:%H:%M:%S}'.format(datetime.datetime.now())
-        currentDate = '{:%dT:%m:%Y}'.format(datetime.datetime.now())
+        currentDate = '{:%d:%m:%Y}'.format(datetime.datetime.now())
         cardId = id
         name = text
         
