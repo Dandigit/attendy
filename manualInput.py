@@ -16,7 +16,7 @@ creds = ia_credentials_helper(CLIENT_ID, CLIENT_SECRET,
 
 text = raw_input('Enter full name of student: ')
 currentTime = '{:%H:%M:%S}'.format(datetime.datetime.now())
-currentDate = '{:%dT:%m:%Y}'.format(datetime.datetime.now())
+currentDate = '{:%d:%m:%Y}'.format(datetime.datetime.now())
 name = text
         
 data = { name: {"Time" : currentTime, "Date" : currentDate}}
