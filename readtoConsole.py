@@ -3,7 +3,7 @@
 import RPi.GPIO as GPIO
 import os
 import sys
-sys.path.append('libraries/SimpleMFRC522.py')
+sys.path.append('libraries/')
 import SimpleMFRC522
 
 reader = SimpleMFRC522.SimpleMFRC522()
