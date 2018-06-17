@@ -44,13 +44,14 @@ tput rc
 tput ed
 echo "[█████  ]"
 
-sudo pip uninstall gspread > /dev/null 2>&1
+sudo pip uninstall -y gspread > /dev/null 2>&1
+sudo pip install --upgrade gspread==0.6.2 > /dev/null 2>&1
 
 tput rc
 tput ed
 echo "[██████ ]"
 
-sudo pip install --upgrade gspread==0.6.2 > /dev/null 2>&1
+sudo apt-get install mpg123
 
 tput rc
 tput ed
