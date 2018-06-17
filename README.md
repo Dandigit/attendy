@@ -9,4 +9,4 @@ Attendy uses RFID (radio frequency identification) technology to mark attendance
 Right now Attendy runs on the Raspberry Pi B+, 2 or 3 connected to the RC522 board. You can find RC522's on eBay for about $10 AUD that are bundled with some RFID tags and cards.
 
 ### Can I use this code in my projects?
-Well, I've put it under the MIT license, so feel free to do so. I'm not very good at licensing - you might need to include a copyright notice or something. Go and make something cool!
+Well, I've put it under the MIT license, so feel free to do so. I'm pretty sure you need to include a copyright notice found in the LICENSE file, but other than that, you're free to make something cool.
