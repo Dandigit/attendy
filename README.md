@@ -1,6 +1,13 @@
 # Attendy
 Attendy is a Raspberry Pi and Google Sheets powered RFID attendance system. It includes most of the required tools and libraries, however you will need to install and enable some things. For the full guide, visit http://attendy.dandigit.com/docs.
 
+## Installation
+It's super simple. Just clone this repository, or download the latest release, then run:
+```
+sudo bash setup.sh
+```
+and Attendy as well as its dependencies will be installed on your Pi. Then, just follow the installer's instructions to set up the Google Sheets API.
+
 ## FAQ
 ### What does Attendy do, exactly?
 Attendy uses RFID (radio frequency identification) technology to mark attendance and/or sign out. It sycs data stored on the cards as well as other useful information straight to Google Sheets. RFID is great because tags can be put in almost anything, from a card to a sticker to a hat. It's a very quick and hassle-free way to identify someone.
